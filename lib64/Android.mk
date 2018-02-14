@@ -13,6 +13,9 @@
 # limitations under the License.
 LOCAL_PATH := $(call my-dir)
 
+# For taimen only
+ifneq ($(filter taimen,$(TARGET_PRODUCT)),)
+
 include $(CLEAR_VARS)
 LOCAL_MODULE := libfacenet.so
 LOCAL_MODULE_CLASS := FAKE
@@ -76,3 +79,5 @@ $(LOCAL_BUILT_MODULE):
 	$(hide) rm -rf $(SYMLINK)
 	$(hide) ln -sf $(TARGET) $(SYMLINK)
 	$(hide) touch $@
+
+endif

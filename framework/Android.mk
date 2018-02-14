@@ -12,6 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# For taimen only
+ifneq ($(filter taimen,$(TARGET_PRODUCT)),)
+
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
@@ -43,3 +46,5 @@ LOCAL_MODULE_CLASS := JAVA_LIBRARIES
 LOCAL_MODULE_SUFFIX := $(COMMON_JAVA_PACKAGE_SUFFIX)
 LOCAL_DEX_PREOPT := false
 include $(BUILD_PREBUILT)
+
+endif
